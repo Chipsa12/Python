@@ -27,7 +27,7 @@ class Woman(Human):
             if gender == 'МУЖЧИНА':
                 first_names = ('Володя', 'Сергей', 'Ванос', 'Бубулкин', 'Андрей', 'Семен Семеныч', 'Гном Гномыч')
             else:
-                first_names = ('Света', 'Оля', 'Аня', 'Ванярита', 'Даша', 'ЛЮДА', 'Натаха')
+                first_names = ('Света', 'Оля', 'Аня', 'Ванярита', 'Даша', 'ЛЮДА')
             name = rnd.choice(first_names)
             print('Пол: ' + gender)
         return [Human(name), gender]
