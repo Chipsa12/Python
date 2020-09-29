@@ -24,11 +24,7 @@ class DB:
                 user="vm31-user",
                 password="12345678",
                 host="127.0.0.1",
-<<<<<<< HEAD
                 port="5432"
-=======
-                port="5433"
->>>>>>> origin/master
             )
             self.cursor = self.connect.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
             print('Я подключился!')
@@ -50,22 +46,15 @@ class DB:
         self.cursor.execute(query)
         return self.cursor.fetchall()
 
-<<<<<<< HEAD
     @toDict
     def getTestByDate(self, year, month, day):
         query = "SELECT id, name, result, date_time FROM tests WHERE EXTRACT(YEAR FROM date_time) <= %s AND EXTRACT(MONTH FROM date_time) <= %s AND EXTRACT(DAY FROM date_time) <= %s"
         self.cursor.execute(query, (year, month, day))
         return self.cursor.fetchall()
 
-=======
->>>>>>> origin/master
     # записать один результат теста
     def insertTestResult(self, name, result):
         query = "INSERT INTO tests (name, result, date_time) VALUES (%s, %s, now())"
         self.cursor.execute(query, (name, result))
         self.connect.commit()
-<<<<<<< HEAD
         return True
-=======
-        return True
->>>>>>> origin/master
